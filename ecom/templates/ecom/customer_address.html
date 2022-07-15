@@ -87,35 +87,64 @@ select{
 .form-style-1 .required{
 	color:red;
 }
+
+
+.local{
+    background-color: white;
+}    
+   
+    
+.row{
+    display: flex;
+   
+}
+
+
+.payment{
+    background-color: #18C3B9;
+    border-radius:15px;
+    text-align: center;
+    padding: 30px;
+    margin-top:25vh;
+    align-self:center;
+    border-radius: 10px;
+    padding-top: 50px;
+    box-shadow: 5px 10px #f3dfdf;
+    height:50vh;
+    width:100vh;
+    
+
+}
+
+
 </style>
-{%if product_in_cart%}
-<form method="post">
-  {% csrf_token %}
-<ul class="form-style-1">
-    <li>
-        <label>Email <span class="required">*</span></label>
-        {% render_field addressForm.Email class="field-long" placeholder="Email" %}
 
-    </li>
-    <li>
-        <label>Mobile <span class="required">*</span></label>
-        {% render_field addressForm.Mobile class="field-long" placeholder="Mobile" %}
-    </li>
 
-    <li>
-        <label>Shipment Address <span class="required">*</span></label>
-        {% render_field addressForm.Address id="field5" class="field-long field-textarea" placeholder="Building Number,city, pin" %}
-
-    </li>
-    <li>
-        <input type="submit" value="Proceed To Pay" />
-    </li>
-</ul>
-</form>
-{%else%}
-<br><br>
-<h1 style="text-align:center; color:red;"> First Add Product In Cart </h1>
-<br><br><br><br><br><br><br><br><br><br>
-{%endif%}
+<div class="container payment">
+	<h2 style="margin-bottom: 40px;">Payment Details</h2>
+  
+  
+	<h5> Name of Bank: Equity bank</h5>
+	<h5> Account Name: VineYard</h5>
+	<h5> Account Number: 6478761846</h5>
+  
+	<p>Kindly attach a copy of the receipt after the payment to proceed with the delivery of your product
+  
+	</p>
+	
+  
+	<div class="text-center my-2">
+	  <input type="file"  (change)="getFile($event)"  name="profile-picture"  id=""  accept=".jpg, .jpeg, .png">
+  </div>
+  
+  <div class="d-grid gap-2 col-4 mx-auto margin-top:30px">
+	
+	<a href="/payment-success" class="btn btn-success" role="button">Pay</a>
+  </div>
+  
+  
+  </div>
 
 {% endblock content %}
+
+

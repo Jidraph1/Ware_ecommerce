@@ -1,0 +1,354 @@
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+      
+    }
+    nav{
+        background-color: #017A82 !important;
+        height: 10vh;
+    }
+    li{
+        display: inline-flex;
+    }
+    a{
+        color: #fff !important;
+    }
+    body{
+        font-family: sans-serif;
+        text-align: center;
+    }
+    .midsection{
+        background-color: #F5F5F5;
+        margin-bottom: 50px;
+    }
+    .qualitypart{
+        align-items: center;
+        text-align: center;
+        
+    
+    }
+    
+    .intro{
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .btn{
+        border-radius: 20px
+    }
+    
+    
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.navbar{
+    background-color: #017A82;
+    color: white
+}
+.navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+
+}
+
+.nav-link{
+    margin-left: 50px;
+    align-items: center;
+    flex: end;
+}
+
+
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#cart{
+    border: 1px solid black;
+    background-color: orange;
+    color: white;
+    height: 45px;
+}
+
+.form-control{
+    border-radius: 5px;
+    width: 600px;
+    align-items: center;
+}
+
+.search-icon{
+    position: fixed;
+    z-index: 10;
+    right:50%;
+    top: 9.8%;
+    color: #017A82;
+    
+
+}
+
+.card-top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border:1px solid black;
+    border-radius: 1 rem;
+}
+
+.item{
+    margin: 0px 15px;
+    text-align: center;
+}
+
+.item img{
+    width: 64px;
+} 
+item a:hover{
+    color: blue;
+}
+
+.card{
+    padding:20px;
+    margin: 20px;
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.card img:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+#logout section
+
+
+.login-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: smaller;
+    width: 150px;
+    border-radius: 0%;
+    border: 2px solid #B8926A;
+    background-color: #E5E5E5;
+    color: black;
+    padding: 2%;
+}
+
+.logout-text{
+    background-color: #017A82;
+    color: white;
+}
+
+
+    
+
+    </style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    
+    <body>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light background-color:blue;">
+      <div class="container-fluid" >
+        <h2> <a  class="navbar-brand" href="/customer-home">Vineyard</a></h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: flex-end;" >
+          <ul class="navbar-nav" style="display:flex;" style="justify-content: space-around;">
+            
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/customer-home">Home</a>
+            </li>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/customer-home">Shopping</a>
+            </li>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/adminlogin">Admin</a>
+            </li>
+
+  
+            <li class="nav-item active">
+              <a class="nav-link" href="/customer-home">Login</a>
+            </li>
+
+        
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+    <section class="container intro">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="static/images/relaxed.jpg" style="height:75vh;" alt="">
+    
+      </div>
+      <div class="col--md-4">
+        <p class="card-text" style="font-size: 1.5em;">Shop from a wide range of products, all at the Comfort of your home</p>
+        <a href="#" class="btn btn-primary" style="background-color: #2D857F;align-items: center;" >Get started now</a>
+    
+      </div>
+    </div>
+    </section>
+    
+    
+    <h3 style="color: #2D857F; margin: 30px;">Why Shop with us?</h3>
+    
+    <div class="container midsection" style="align-items: center">
+    <div class="card-group">
+      <div class="card" style="align-items: center; border: none;">
+        <img src="static/images/savings.png" class="card-img-top" style="height: 5vh;width:3vw;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Real easy</h5>
+          <p class="card-text">Create an account with Vineyard and make your preffered orders at the comfort of your home</p>
+        </div>
+      </div>
+      <div class="card" style="align-items: center; border: none;">
+        <img src="static/images/savings.png" class="card-img-top" style="height: 5vh;width:5vw;"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Save</h5>
+          <p class="card-text">Save your money and time with realtime offers on selected items and discounts.</p>
+        </div>
+      </div>
+      <div class="card" style="align-items: center; border: none; text-align: center;">
+        <img src="static/images/delivery.png" class="card-img-top" style="height: 5vh;width:3vw;"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Doorstep delivery</h5>
+          <p class="card-text">Purchase your goods and get them delivered to your location in no time.</p>
+        </div>
+        </div>
+        </div>
+        </div>
+    
+    <div class="container qualitypart" style="text-align: center;">
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card-body">
+              <img src="static/images/onlineshop.jpg" style="height:200px;" alt="">
+             </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card-body" style="margin-top:40px" >
+              <h4 style="color: #2D857F;font-size: 30px;">Quantity With Quality</h4>
+              <p style="margin-left: 50px;">Shop from a wide range of products, all at the Comfort of your home.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
+    <div class="container" style="text-align: center;">
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card-body" style="margin-top:40px">
+              <h4 style="color: #2D857F;font-size: 30px;">Understand where and when to Buy</h4>
+              <p style="margin-left: 50px;">We have a complete view of customer spending including purchases they make at competitors. This purchase intelligence is the foundation of everything we do.</p>
+            </div>
+    
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+    
+            <div class="card-body">
+              <img src="https://mdiscounts.co.ke/wp-content/uploads/2022/06/Person-using-phone.svg" style="height: 240px;margin-right: 150px;" alt="">
+             </div>
+          </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card-body" >
+              <img src="static/images/onlineshop.jpg" style="height:300px;" alt="">
+             </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card-body" style="margin-top:40px">
+              <h4 style="color: #2D857F;font-size: 30px;">Rewarding experience</h4>
+              <p style="margin-left: 50px;">As a customer you are our no.1 priority. we value our customer loyalty and we strive to satisfy your needs and wants. </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="row col-md-12">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6">
+        <h5 style="text-align: center;">Trusted partner  for the largest brands and financial institutions:</h5>
+      </div>
+      <div class="col-sm-3">
+      </div>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-md-12 d-flex flex-row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2">
+        <img src="https://s3-alpha-sig.figma.com/img/233c/4e2b/30117aa715f114bb164e5a632c2beee0?Expires=1658102400&Signature=di~DST371QiXeJs5LR3gSSdpqFp7i16HcMadff1vTv2psNmWNI5HT5fwBaxscWXLFLy3SSLdSk3G8CHHPttxV1jEiMrWxVQtu04RBzDV9sSyhgcuDTVDtVqXoKOyclvY0jsWuyqF7oOTiY7BvpAQ1seVT1q8UrJsJgNaAFJhE~fZWO0CH~K3OzuEZfn-Q-GVnHB-g6mwD9qy7sO2lgyrz-F5rIfBcqN4R~cUPVYmDUVMj1cpEFdM6k7SxK17t68s9xlVURXJD-TVLrZR0DiYrQuntEnt9SC8AT~YNcAE-~L9If59mI5kJw8GkwZxqlGoso7pM~xZTVviyaQZTuw-sA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" style="height: 120px;" alt="">
+      </div>
+      <div class="col-md-2">
+        <img src="https://s3-alpha-sig.figma.com/img/3cb6/de79/da9394600a7c24a5ef8edfce636299f5?Expires=1658102400&Signature=faZNNAA7d01-juQksmajFsErY-3hVISNiT6hCBY8S5uIIeQWSrK5jS7BwhrmXb5ymO9j2p-VXOPB7660XYIZAKH9VTtDM-o-gTFBu0eCn6vdSu5-Qfkacz8tzhJE-GLgIiS8QSPU2nfq0yS5kw~eMBdCFjjivHtWwSX4H2m4XMAZZrY-hQbYR--5jwymZL6N-7zwP9eRnO57cgi8-0yZ9sNv36U9Z60dfQ7Ev~rQBeJm1WxUYQh7~vtljvShM89WY5gYM7AD241ECBdSTv6lJGkAe66rpPYW-hp3wTztbu3XJY5cQ0Fq-chswNxxManalRZ3Tw0WSDeNAX08XcA6sw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" style="height: 100px;" alt="">
+      </div>
+      <div class="col-md-2">
+        <img src="https://s3-alpha-sig.figma.com/img/3e76/d067/52bab450354b57eaf0f16b8ec961b384?Expires=1658102400&Signature=DHcb~fUvUYHN2bbe91z4TlBD94IEOC8wk8x6cOYb1P1VzwsvERLstPzYhAQjlkljtMqKQ38-I23WClS1T24JYI66Xw~6m9wOraPknezCihPCEL2OlrMGHNcWcPsl08inlWK0IO4~-EvpxIidhJKz5tyopyhmGk8Wp0BI8Ia4Y6KULx1acoa4vr0Gs5KcrGs-m-n9nw~-8ldTQF88cKmFXshaskVVCD5fBYpxQprwjRX7qqU4upTXGyijUQ5VYNyhW3dnDbTHZDmkAPohjrYJNH7d2kXdJSOOiXA9NVmdeH3ncfQzzw8LT8Lo~BTS4MHhX~RJOr0jkZdETdfAw733Wg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" style="height: 100px;" alt="">
+      </div>
+      <div class="col-md-2">
+        <img src="https://s3-alpha-sig.figma.com/img/11dd/9acb/3210c51fd6e4e6820fd73e210719032f?Expires=1658102400&Signature=g0lXIGFQDnNZe2Z0YCBHDRM0yGR1~wn8KD~M0ltapvwMy~TMaEtcEJapW9s1QHoRSDVWXuNYkupyFtHsPr~0Bs2Rl5VZzgLRf2UJAwVUnDJ5IZZcw6yEd9hzFW4mLZj-EAh6CpJakMrQR1Dbap8YTxuztjWTxZGyT52lzeWttXT78Jb4D-gZn-F~Xes0xKiuKS9zAIk5rtuYi8Pu3gMCKmbC7HE3kJ~krhwnAEb5PhVLOb98TMRKJYLm6gZBCMCLUHDmf8sgAm~hrenAKNlyP4aDxvNsyrZ42gtl9nVzvA-OiNukNmYYaDyoyMpVEsKIEXJCWWFdbSpAprL5Ioq9jQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" style="height: 70px;" alt="">
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <footer class="page-footer col-md-12">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3" style="background-color:#2d857f; height:50px; color: #fff;">
+        <ul class="fa-ul d-flex justify-content-center">
+          <li style="padding-right: 1rem;"><i class="fa fa-phone-square" style="color:rgb(46, 174, 46) !important;"></i></li>
+          <li style="padding-right: 1rem;"><i class="fab fa-twitter" style="color:rgb(2, 8, 12) !important;"></i></li>
+          <li style="padding-right: 1rem;"><i class="fab fa-instagram" style="color:rgb(223, 32, 61)  !important;"></i> </li>
+          <li style="padding-right: 1rem;"><i class="fab fa-google" style="color:rgb(223, 18, 18)  !important;"></i> </li>
+          <li style="padding-right: 1rem;"><i class="fab fa-facebook-f" style="color:rgb(6, 53, 139) !important;"></i> </li>
+        </ul>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    
+    </body>
+    </html>

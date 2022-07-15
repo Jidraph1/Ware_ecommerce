@@ -23,7 +23,7 @@ def home_view(request):
     
 
 
-#for showing login button for admin(by sumit)
+#login button for admin
 def adminclick_view(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
@@ -49,22 +49,22 @@ def customer_signup_view(request):
         return HttpResponseRedirect('customerlogin')
     return render(request,'ecom/customersignup.html',context=mydict)
 
-#-----------for checking user iscustomer
+#iscustomer
 def is_customer(user):
     return user.groups.filter(name='CUSTOMER').exists()
 
 
 
-#---------AFTER ENTERING CREDENTIALS WE CHECK WHETHER USERNAME AND PASSWORD IS OF ADMIN,CUSTOMER
+# customer
 def afterlogin_view(request):
     if is_customer(request.user):
         return redirect('customer-home')
     else:
         return redirect('admin-dashboard')
 
-#---------------------------------------------------------------------------------
-#------------------------ ADMIN RELATED VIEWS START ------------------------------
-#---------------------------------------------------------------------------------
+
+
+# admin side
 @login_required(login_url='adminlogin')
 def admin_dashboard_view(request):
     # for cards on dashboard
@@ -392,15 +392,10 @@ def customer_address_view(request):
 
 
 
-# here we are just directing to this view...actually we have to check whther payment is successful or not
-#then only this view should be accessed
+
 @login_required(login_url='customerlogin')
 def payment_success_view(request):
-    # Here we will place order | after successful payment
-    # we will fetch customer  mobile, address, Email
-    # we will fetch product id from cookies then respective details from db
-    # then we will create order objects and store in db
-    # after that we will delete cookies because after order placed...cart should be empty
+
     customer=models.Customer.objects.get(user_id=request.user.id)
     products=None
     email=None
@@ -454,22 +449,7 @@ def my_order_view(request):
 
 
 
-# @login_required(login_url='customerlogin')
-# @user_passes_test(is_customer)
-# def my_order_view2(request):
 
-#     products=models.Product.objects.all()
-#     if 'product_ids' in request.COOKIES:
-#         product_ids = request.COOKIES['product_ids']
-#         counter=product_ids.split('|')
-#         product_count_in_cart=len(set(counter))
-#     else:
-#         product_count_in_cart=0
-#     return render(request,'ecom/my_order.html',{'products':products,'product_count_in_cart':product_count_in_cart})    
-
-
-
-#--------------for discharge patient bill (pdf) download and printing
 import io
 from xhtml2pdf import pisa
 from django.template.loader import get_template
@@ -541,9 +521,7 @@ def edit_profile_view(request):
 
 
 
-#---------------------------------------------------------------------------------
-#------------------------ ABOUT US AND CONTACT US VIEWS START --------------------
-#---------------------------------------------------------------------------------
+#about us
 def aboutus_view(request):
     return render(request,'ecom/aboutus.html')
 
@@ -565,69 +543,3 @@ def contactus_view(request):
 # #inventory side
 
 
-# def inventoryList(request):
-#     inventories = Inventory.objects.all()
-#     context = {
-#         "inventories": inventories
-#     }
-#     return render(request, "inventories/inventory_list.html", context=context)
-
-
-# # @login_required()
-# def per_product_view(request, pk):
-#     inventory = get_object_or_404(Inventory, pk=pk)
-#     context = {
-#         'inventory': inventory
-#     }
-#     return render(request, "inventories/per_product.html", context=context)
-
-
-# # @login_required()
-# def update(request, pk):
-#     inventory = get_object_or_404(Inventory, pk=pk)
-#     if request.method == "POST":
-#         updateForm = InventoryUpdateForm(data=request.POST)
-#         if updateForm.is_valid():
-#             inventory.name = updateForm.data['name']
-#             inventory.quantity_in_stock = updateForm.data['quantity_in_stock']
-#             inventory.quantity_sold = updateForm.data['quantity_sold']
-#             inventory.cost_per_item = updateForm.data['cost_per_item']
-#             inventory.sales = float(inventory.cost_per_item) * float(inventory.quantity_sold)
-#             inventory.save()
-#             messages.success(request, "Update Successful")
-#             return redirect(f"/inventory/per_product_view/{pk}/")
-#     else:
-#         updateForm = InventoryUpdateForm(instance=inventory)
-
-#     return render(request, "inventories/inventory_update.html", {'form' : updateForm})
-
-
-# # @login_required()
-# def delete(request, pk):
-#     inventory = get_object_or_404(Inventory, pk=pk)
-#     inventory.delete()
-#     messages.success(request, "Inventory Deleted")
-#     return redirect("/inventory/")
-
-    
-#     # messages.debug()
-#     # messages.info()
-#     # messages.success()
-#     # messages.warning()
-#     # messages.error()
-
-
-# # @login_required()
-# def add_product(request):
-#     if request.method == "POST":
-#         updateForm = AddInventoryForm(data=request.POST)
-#         if updateForm.is_valid():
-#             new_invetory = updateForm.save(commit=False)
-#             new_invetory.sales = float(updateForm.data['cost_per_item']) * float(updateForm.data['quantity_sold'])
-#             new_invetory.save()
-#             messages.success(request, "Successfully Added Product")
-#             return redirect(f"/inventory/")
-#     else:
-#         updateForm = AddInventoryForm()
-
-#     return render(request, "inventories/inventory_add.html", {'form' : updateForm})
